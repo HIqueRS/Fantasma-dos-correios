@@ -29,7 +29,7 @@ public class PlayerShoot : MonoBehaviour
                 _shootDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
                 _shootDirection.z = 0;
 
-                _aux = GameObject.Instantiate(_letter[_letterID % 3], transform.position, Quaternion.identity);
+                _aux = Instantiate(_letter[_letterID % 3], transform.position, Quaternion.identity);
                 _aux.GetComponent<LetterBehaviour>().Direction = _shootDirection.normalized;
                 _aux.GetComponent<LetterBehaviour>().LetterID = _letterID % 3;
 

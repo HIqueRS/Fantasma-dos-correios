@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4016967100276288133}
   - component: {fileID: 3419312011171359053}
   - component: {fileID: 5261123978608580917}
+  - component: {fileID: 1581183711380400432}
   m_Layer: 0
   m_Name: Letter0
-  m_TagString: Untagged
+  m_TagString: Letter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: 0}
+  LetterID: 0
   _velocity: 10
 --- !u!61 &5261123978608580917
 BoxCollider2D:
@@ -124,3 +126,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.72602737, y: 0.47945204}
   m_EdgeRadius: 0
+--- !u!50 &1581183711380400432
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016967100276288132}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

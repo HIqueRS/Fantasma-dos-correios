@@ -20,8 +20,5 @@ public class LetterBehaviour : MonoBehaviour
         transform.position += Direction * _velocity * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log(collision.gameObject.name);
-    }
+    
 }
