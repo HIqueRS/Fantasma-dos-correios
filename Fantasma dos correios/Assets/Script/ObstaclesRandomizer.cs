@@ -22,21 +22,15 @@ public class ObstaclesRandomizer : MonoBehaviour
     private void RandomizeObjects()
     {
         int randomObjectNumber;
-        int range;
 
         foreach (GameObject obstacle in _obstaclesInstances)
         {
             if (obstacle.CompareTag("Colectable"))
             {
-                if (_playerStats.HasDog)
-                {
-                    range = 60;
-                }
-                else
-                {
-                    range = 50;
-                }
-                randomObjectNumber = Random.Range(0, range);
+
+                randomObjectNumber = Random.Range(0, 100);
+
+                
 
             }
         }
