@@ -1023,6 +1023,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 411607847035220931, guid: 9b28b8af0140f894ea17eedc72209339, type: 3}
+      propertyPath: m_Name
+      value: Bolacha
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476473123625088357, guid: 9b28b8af0140f894ea17eedc72209339, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393495443926044202, guid: 9b28b8af0140f894ea17eedc72209339, type: 3}
+      propertyPath: m_Name
+      value: Recheio
+      objectReference: {fileID: 0}
     - target: {fileID: 6716371920656268985, guid: 9b28b8af0140f894ea17eedc72209339, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1114,6 +1126,10 @@ PrefabInstance:
     - target: {fileID: 6716371920656268990, guid: 9b28b8af0140f894ea17eedc72209339, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138056981096264905, guid: 9b28b8af0140f894ea17eedc72209339, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b28b8af0140f894ea17eedc72209339, type: 3}

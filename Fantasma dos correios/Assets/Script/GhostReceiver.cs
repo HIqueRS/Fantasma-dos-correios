@@ -9,6 +9,9 @@ public class GhostReceiver : MonoBehaviour
     [SerializeField] private Sprite[] _letterRequestSprites;
     [SerializeField] private SpriteRenderer _letterRequestGameobj;
     [SerializeField] private UnityEvent _getLetter;
+    [SerializeField] private PlayerStats _playerStats;
+
+    [SerializeField] private float _timeBonus;
 
     private bool _isFinished;
    
@@ -38,9 +41,14 @@ public class GhostReceiver : MonoBehaviour
                 {
                     GameObject.Destroy(collision.gameObject);
 
-                    _getLetter.Invoke();//pq tem q aumentar o tempo tbm
+                    _getLetter.Invoke();
+                    _playerStats.Time += _timeBonus;
 
                     _isFinished = true;
+                }
+                else
+                {
+                    GameObject.Destroy(collision.gameObject);
                 }
             }
         }
