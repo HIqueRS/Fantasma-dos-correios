@@ -6,16 +6,22 @@ public class LetterBehaviour : MonoBehaviour
 {
 
     [HideInInspector] public Vector3 Direction;
+    [HideInInspector] public int LetterID;
     [SerializeField] private float _velocity = 5f;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         GameObject.Destroy(this.gameObject, 5f);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         transform.position += Direction * _velocity * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
     }
 }

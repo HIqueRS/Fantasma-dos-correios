@@ -219,4 +219,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6dc21762e22d0c419d9d41b232a250a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _letter: {fileID: 4016967100276288132, guid: 17b92f01fabb8d04da935a1d8424b8dc, type: 3}
+  _letter:
+  - {fileID: 5091941835470225365, guid: cffbaa0442d759f4f9bd21285079d7d2, type: 3}
+  - {fileID: 7568483438710901228, guid: e2d21067eb49dfe439c6bfa740635987, type: 3}
+  - {fileID: 7693031735523964666, guid: 3216464c130f2314790977965467ffbb, type: 3}
+  _playerStats: {fileID: 11400000, guid: 0dc8866da6d50914d96c45692bbc8e19, type: 2}
+  _changeLetter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LetterUI, Assembly-CSharp
+        m_MethodName: ChangeLetterUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
