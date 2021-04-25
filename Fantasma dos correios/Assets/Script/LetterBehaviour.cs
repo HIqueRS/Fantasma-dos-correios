@@ -5,12 +5,12 @@ using UnityEngine;
 public class LetterBehaviour : MonoBehaviour
 {
 
-    public Vector3 Direction;
+    [HideInInspector] public Vector3 Direction;
     [SerializeField] private float _velocity = 5f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject.Destroy(this.gameObject, 5f);
     }
 
     // Update is called once per frame

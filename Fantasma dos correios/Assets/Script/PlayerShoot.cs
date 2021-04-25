@@ -6,6 +6,7 @@ public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private GameObject _letter;
     private Vector3 _shootDirection;
+    private GameObject aux;
     void Start()
     {
         
@@ -16,7 +17,11 @@ public class PlayerShoot : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            
+            _shootDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            _shootDirection.z = 0;
+
+            aux = GameObject.Instantiate(_letter,transform.position,Quaternion.identity);
+            aux.GetComponent<LetterBehaviour>().Direction = _shootDirection.normalized;
         }
     }
 }
