@@ -63,5 +63,33 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8212755143010513623, guid: 17b92f01fabb8d04da935a1d8424b8dc, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212755143010513623, guid: 17b92f01fabb8d04da935a1d8424b8dc, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212755143010513623, guid: 17b92f01fabb8d04da935a1d8424b8dc, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.72602737
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212755143010513623, guid: 17b92f01fabb8d04da935a1d8424b8dc, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.47945204
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212755143010513623, guid: 17b92f01fabb8d04da935a1d8424b8dc, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.72602737
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212755143010513623, guid: 17b92f01fabb8d04da935a1d8424b8dc, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.47945204
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212755143010513623, guid: 17b92f01fabb8d04da935a1d8424b8dc, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17b92f01fabb8d04da935a1d8424b8dc, type: 3}

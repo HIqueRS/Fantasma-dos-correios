@@ -12,13 +12,13 @@ public class LetterUI : MonoBehaviour
     private int _letterID;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _letterID = 3;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }

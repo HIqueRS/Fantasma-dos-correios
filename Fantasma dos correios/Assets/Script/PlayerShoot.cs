@@ -13,13 +13,14 @@ public class PlayerShoot : MonoBehaviour
 
     [SerializeField] private UnityEvent _changeLetter;
 
-    void Start()
+    private void Start()
     {
         _letterID = 3;
+        _playerStats.Letters = 5;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
@@ -30,6 +31,7 @@ public class PlayerShoot : MonoBehaviour
 
                 _aux = GameObject.Instantiate(_letter[_letterID % 3], transform.position, Quaternion.identity);
                 _aux.GetComponent<LetterBehaviour>().Direction = _shootDirection.normalized;
+                _aux.GetComponent<LetterBehaviour>().LetterID = _letterID % 3;
 
                 _playerStats.Letters--;
             }
