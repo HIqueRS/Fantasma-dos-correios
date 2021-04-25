@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LetterUI : MonoBehaviour
 {
 
     [SerializeField] private Sprite[] _lettersSprite;
     [SerializeField] private Image _letterUIImage;
+    [SerializeField] private TMPro.TextMeshProUGUI _letterCount;
+
+    [SerializeField] private PlayerStats _playerStats;
 
     private int _letterID;
 
@@ -27,7 +31,10 @@ public class LetterUI : MonoBehaviour
     {
         _letterID++;
         _letterUIImage.sprite = _lettersSprite[_letterID % 3];
+    }
 
-        
+    public void ChangeCount()
+    {
+        _letterCount.text = string.Concat(_playerStats.Letters, " x");
     }
 }
