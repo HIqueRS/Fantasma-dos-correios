@@ -14,15 +14,20 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private UnityEvent _changeLetter;
     [SerializeField] private UnityEvent _shoot;
 
+  
+
     private void Start()
     {
         _letterID = 3;
         _playerStats.Letters = 5;
+       
     }
 
     // Update is called once per frame
     private void Update()
     {
+        
+
         if(Input.GetMouseButtonDown(0))
         {
             if(_playerStats.Letters > 0)

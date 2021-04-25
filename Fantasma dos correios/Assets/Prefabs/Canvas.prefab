@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6523697038010649068}
   - component: {fileID: 8709707694007533219}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Bolacha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,6 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a165b71b56e0546af852f63e031177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerStats: {fileID: 11400000, guid: 0dc8866da6d50914d96c45692bbc8e19, type: 2}
+  _maxTime: 30
+  _fill: {fileID: 2600856659378655887}
 --- !u!1 &2108405017173259877
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +238,7 @@ GameObject:
   - component: {fileID: 7174856838824511233}
   - component: {fileID: 2600856659378655887}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Recheio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

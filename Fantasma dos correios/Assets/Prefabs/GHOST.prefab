@@ -143,6 +143,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _playerStats: {fileID: 11400000, guid: 0dc8866da6d50914d96c45692bbc8e19, type: 2}
+  _timeBonus: 3
 --- !u!1 &8410738548546481861
 GameObject:
   m_ObjectHideFlags: 0
