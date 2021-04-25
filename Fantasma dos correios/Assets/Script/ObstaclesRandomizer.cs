@@ -28,8 +28,15 @@ public class ObstaclesRandomizer : MonoBehaviour
         {
             if (obstacle.CompareTag("Colectable"))
             {
-                
-                randomObjectNumber = Random.Range(0, 60);
+                if (_playerStats.HasDog)
+                {
+                    range = 60;
+                }
+                else
+                {
+                    range = 50;
+                }
+                randomObjectNumber = Random.Range(0, range);
 
             }
         }
