@@ -12,6 +12,7 @@ public class PlayerShoot : MonoBehaviour
     private int _letterID;
 
     [SerializeField] private UnityEvent _changeLetter;
+    [SerializeField] private UnityEvent _shoot;
 
     private void Start()
     {
@@ -34,6 +35,8 @@ public class PlayerShoot : MonoBehaviour
                 _aux.GetComponent<LetterBehaviour>().LetterID = _letterID % 3;
 
                 _playerStats.Letters--;
+
+                _shoot.Invoke();
             }
             
         }
