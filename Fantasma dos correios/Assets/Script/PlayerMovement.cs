@@ -41,7 +41,29 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
         }
 
-        if(_velocity < _topVelocity)
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+        {
+            Quaternion currentRotation = transform.rotation;
+            Quaternion wantedRotation = Quaternion.Euler(0, 0, 180);
+            transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
+        }
+
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
+        {
+
+        }
+        
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+        {
+
+        }
+
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+        {
+
+        }
+
+        if (_velocity < _topVelocity)
         {
             _velocity += Time.deltaTime * _acceleration;
         }
