@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstaclesInstances: []
+  _obstacles: []
   _playerStats: {fileID: 11400000, guid: 0dc8866da6d50914d96c45692bbc8e19, type: 2}
 --- !u!114 &6707786793806727141
 MonoBehaviour:
@@ -294,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 6707786793806727141}
+  _obstaclesRandomizer: {fileID: 3902701761297860075}
 --- !u!1 &5819517207923363261
 GameObject:
   m_ObjectHideFlags: 0
