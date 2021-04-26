@@ -13,6 +13,9 @@ public class Dog : MonoBehaviour
     public bool Got;
 
     [SerializeField] public float _velocity;
+    [SerializeField] public PlayerStats _playerStats;
+
+
     void Start()
     {
         _closer = Vector2.zero;
@@ -31,7 +34,7 @@ public class Dog : MonoBehaviour
         else
         {
             transform.position += transform.up * Time.deltaTime * 2;
-
+            _playerStats.HasDog = false;
             Destroy(gameObject, 3);
         }
     }
