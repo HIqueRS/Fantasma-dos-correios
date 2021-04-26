@@ -14,6 +14,8 @@ public class GhostReceiver : MonoBehaviour
     [SerializeField] private float _timeBonus;
 
     private bool _isFinished;
+
+    private int _dogFleeChance;
    
 
     // Start is called before the first frame update
@@ -46,6 +48,13 @@ public class GhostReceiver : MonoBehaviour
                     _playerStats.Points += _timeBonus*10f;
 
                     _isFinished = true;
+
+                    _dogFleeChance = Random.Range(0, 100);
+
+                    if(_dogFleeChance < 25)
+                    {
+                        Instantiate<GameObject>(Resources.Load<GameObject>("DOG"), this.transform.position, Quaternion.identity);
+                    }
                 }
                 else
                 {
