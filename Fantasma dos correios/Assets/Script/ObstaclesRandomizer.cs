@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ObstaclesRandomizer : MonoBehaviour
 {
-    [SerializeField] GameObject[] _obstaclesInstances;
-    [SerializeField] PlayerStats _playerStats;
+    [SerializeField] private GameObject[] _obstaclesInstances;
+    [SerializeField] private GameObject[] _obstacles;
+
+    [SerializeField] private PlayerStats _playerStats;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +32,17 @@ public class ObstaclesRandomizer : MonoBehaviour
 
                 randomObjectNumber = Random.Range(0, 100);
 
-                
+                if (_playerStats.HasDog)
+                {
+                    if(randomObjectNumber < 50)
+                    {
+                        Instantiate(Resources.Load<GameObject>("Bone"), obstacle.transform);
+                    }
+                    else if(_playerStats.Letters <= 1)
+                    {
+                        Instantiate(Resources.Load<GameObject>("Letter"));
+                    }
+                }
 
             }
         }
