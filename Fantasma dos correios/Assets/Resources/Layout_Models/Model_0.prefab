@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1689338314985430819}
   - component: {fileID: 1595578889228961740}
   - component: {fileID: 8134623115548148573}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Destroy previous
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstaclesInstances: []
-  _obstacles: []
   _playerStats: {fileID: 11400000, guid: 0dc8866da6d50914d96c45692bbc8e19, type: 2}
 --- !u!114 &6707786793806727141
 MonoBehaviour:
@@ -138,10 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9eeb4478b91624299601e9c87ba142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabLayout:
-  - {fileID: 4065094939019607548, guid: ae46b51f84e9a9e4cbf2fb2907253f26, type: 3}
-  - {fileID: 7327448025840045126, guid: 2495850216c41714da9685018abf06d1, type: 3}
-  - {fileID: 6669248444038282476, guid: a197ac2345e9d064c82e48ea3e4275c6, type: 3}
 --- !u!1 &2593281371933938423
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +230,7 @@ GameObject:
   - component: {fileID: 3893760288525168244}
   - component: {fileID: 7803259269376887713}
   - component: {fileID: 1045365877456090034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MidSectionCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
