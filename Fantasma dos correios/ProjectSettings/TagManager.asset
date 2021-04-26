@@ -8,6 +8,7 @@ TagManager:
   - Colectable
   - Target
   - Dog
+  - End
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Letter
   - Wall
   - LayoutCollider
-  - 
+  - Ghost
   - 
   - 
   - 
