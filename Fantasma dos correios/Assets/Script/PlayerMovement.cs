@@ -75,5 +75,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         transform.position += -transform.up * Time.deltaTime * _velocity;
+
+        _acceleration += 0.1f * Time.deltaTime;
+        _topVelocity += 0.1f * Time.deltaTime;
     }
 }

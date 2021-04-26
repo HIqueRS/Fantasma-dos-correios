@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4631130124027317703}
   - component: {fileID: 4631130124027317701}
   - component: {fileID: 2659359959753055106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,4 +242,3 @@ MonoBehaviour:
   _shoot:
     m_PersistentCalls:
       m_Calls: []
-  _mouse: {fileID: 0}
