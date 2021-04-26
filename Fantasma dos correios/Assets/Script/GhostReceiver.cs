@@ -53,7 +53,7 @@ public class GhostReceiver : MonoBehaviour
 
                     _dogFleeChance = Random.Range(0, 100);
 
-                    if(_dogFleeChance < 50)
+                    if(_dogFleeChance < 50 && !_playerStats.HasDog)
                     {
                         _aux = Instantiate<GameObject>(Resources.Load<GameObject>("DOG"), this.transform.position, Quaternion.identity);
 
