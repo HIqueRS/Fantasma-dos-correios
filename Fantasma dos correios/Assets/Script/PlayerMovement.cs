@@ -84,6 +84,8 @@ public class PlayerMovement : MonoBehaviour
 
         _acceleration += 0.0125f * Time.deltaTime;
         _topVelocity +=  0.05f * Time.deltaTime;
+
+        _playerStats.PlayerVelocity = _topVelocity; 
     }
 
    

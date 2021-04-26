@@ -12,7 +12,7 @@ public class Dog : MonoBehaviour
 
     public bool Got;
 
-    [SerializeField] private float _velocity;
+    [SerializeField] public float _velocity;
     void Start()
     {
         _closer = Vector2.zero;
