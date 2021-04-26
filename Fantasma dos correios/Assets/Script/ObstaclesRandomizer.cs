@@ -8,10 +8,15 @@ public class ObstaclesRandomizer : MonoBehaviour
 
     [SerializeField] private PlayerStats _playerStats;
 
+    private bool _boneInstantiated;
+    private bool _letterInstantiated;
+
     void Start()
     {
-        _playerStats.HasDog = true;
-        _playerStats.Letters = 1;
+
+        _boneInstantiated = false;
+        _letterInstantiated = false;
+
         RandomizeObjects();
     }
 
@@ -22,16 +27,18 @@ public class ObstaclesRandomizer : MonoBehaviour
         foreach (GameObject obstacle in _obstaclesInstances)
         {
 
+            randomObjectNumber = Random.Range(0, 100);
+
             if (obstacle.CompareTag("Colectable"))
             {
 
-                randomObjectNumber = Random.Range(0, 100);
-
-                if (_playerStats.HasDog)
+                if (_playerStats.HasDog && !_boneInstantiated)
                 {
                     if(randomObjectNumber < 50)
                     {
                         Instantiate(Resources.Load<GameObject>("Bone"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+
+                        _boneInstantiated = true;
                     }
                     else if(_playerStats.Letters <= 1)
                     {
@@ -43,7 +50,7 @@ public class ObstaclesRandomizer : MonoBehaviour
                         {
                             Instantiate(Resources.Load<GameObject>("Letter"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
                         }
-                        else if(randomObjectNumber == 75 && randomObjectNumber < 75 + 12)
+                        else if(randomObjectNumber >= 75 && randomObjectNumber < 75 + 12)
                         {
                             Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
                         }
@@ -96,35 +103,154 @@ public class ObstaclesRandomizer : MonoBehaviour
                 }
                 else
                 {
-                    switch(_playerStats.Letters)
+
+                    if (!_letterInstantiated)
                     {
-                        case 0:
+                        switch (_playerStats.Letters)
+                        {
+                            case 0:
 
-                            if(randomObjectNumber < 75)
-                            {
-                                Instantiate(Resources.Load<GameObject>("Letter"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
-                            }
+                                if (randomObjectNumber < 75)
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Letter"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
 
-                            break;
+                                    _letterInstantiated = true;
+                                }
+                                else if (randomObjectNumber >= 75 && randomObjectNumber < 75 + 12)
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
+                                else
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Skull"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
 
-                        case 1:
-                            break;
+                                break;
 
-                        case 2:
-                            break;
+                            case 1:
 
-                        case 3:
-                            break;
+                                if (randomObjectNumber < 50)
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Letter"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
 
-                        case 4:
-                            break;
+                                    _letterInstantiated = true;
+                                }
+                                else if (randomObjectNumber >= 50 && randomObjectNumber < 75)
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
+                                else
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Skull"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
 
-                        default:
-                            break;
+                                break;
 
+                            case 2:
+
+                                if (randomObjectNumber < 25)
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Letter"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+
+                                    _letterInstantiated = true;
+                                }
+                                else if (randomObjectNumber >= 25 && randomObjectNumber < 62)
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
+                                else
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Skull"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
+
+                                break;
+
+                            case 3:
+
+                                if (randomObjectNumber < 12)
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Letter"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+
+                                    _letterInstantiated = true;
+                                }
+                                else if (randomObjectNumber >= 12 && randomObjectNumber < 56)
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
+                                else
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Skull"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
+
+                                break;
+
+                            case 4:
+
+                                if (randomObjectNumber < 6)
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Letter"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+
+                                    _letterInstantiated = true;
+                                }
+                                else if (randomObjectNumber >= 6 && randomObjectNumber < 53)
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
+                                else
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Skull"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
+
+                                break;
+
+                            default:
+
+                                if (randomObjectNumber < 50)
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
+                                else
+                                {
+                                    Instantiate(Resources.Load<GameObject>("Skull"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                                }
+
+                                break;
+
+                        }
                     }
+                    else
+                    {
+                        if (randomObjectNumber < 50)
+                        {
+                            Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                        }
+                        else
+                        {
+                            Instantiate(Resources.Load<GameObject>("Skull"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                        }
+                    }
+                    
                 }
 
+            }
+            else
+            {
+                if(randomObjectNumber < 30)
+                {
+                    Instantiate(Resources.Load<GameObject>("Skull"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                }
+                else if(randomObjectNumber >= 30 && randomObjectNumber < 50)
+                {
+                    Instantiate(Resources.Load<GameObject>("Spider"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                }
+                else if (randomObjectNumber >= 50 && randomObjectNumber < 70)
+                {
+                    Instantiate(Resources.Load<GameObject>("Bat"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                }
+                else
+                {
+                    Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                }
             }
         }
     }
