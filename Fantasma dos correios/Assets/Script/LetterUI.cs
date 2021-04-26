@@ -24,7 +24,7 @@ public class LetterUI : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+        ChangeCount();
     }
 
     public void ChangeLetterUI()

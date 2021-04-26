@@ -31,6 +31,8 @@ public class Dog : MonoBehaviour
         else
         {
             transform.position += transform.up * Time.deltaTime * 2;
+
+            Destroy(gameObject, 3);
         }
     }
 

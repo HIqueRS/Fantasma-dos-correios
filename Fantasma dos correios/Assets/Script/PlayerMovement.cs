@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private float _velocity;
 
     [SerializeField] private PlayerStats _playerStats;
+
+    [SerializeField] private AudioSource _collisionAudioSource;
+
 
     private void Update()
     {
@@ -91,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _velocity = 0;
             collision.gameObject.GetComponent<Dog>().Got = true;
+            _playerStats.Letters--;
         }
         if (collision.gameObject.CompareTag("End"))
         {
@@ -102,5 +107,9 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log(collision.gameObject.name);
         _velocity = 0;
+
+        _collisionAudioSource.Play();
+
+
     }
 }
