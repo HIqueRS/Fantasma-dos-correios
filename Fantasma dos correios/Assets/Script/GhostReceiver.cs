@@ -51,7 +51,7 @@ public class GhostReceiver : MonoBehaviour
 
                     _dogFleeChance = Random.Range(0, 100);
 
-                    if(_dogFleeChance < 25)
+                    if(_dogFleeChance < 100)
                     {
                         Instantiate<GameObject>(Resources.Load<GameObject>("DOG"), this.transform.position, Quaternion.identity);
                     }

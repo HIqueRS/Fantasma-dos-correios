@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7513891708548972217}
   - component: {fileID: 2247108213906584179}
   - component: {fileID: 1224253821669342541}
+  - component: {fileID: 1350596554758760241}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -109,3 +110,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.408107, y: 0.78157103}
   m_EdgeRadius: 0
+--- !u!114 &1350596554758760241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718825690055095007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2482ff703f983dc4a99d06c00438d531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerStats: {fileID: 11400000, guid: 0dc8866da6d50914d96c45692bbc8e19, type: 2}
+  _changeUI:
+    m_PersistentCalls:
+      m_Calls: []
