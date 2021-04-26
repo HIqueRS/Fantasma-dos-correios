@@ -69,4 +69,28 @@ public class Dog : MonoBehaviour
 
         transform.position += _dir * Time.deltaTime * _velocity;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if(collision.gameObject.CompareTag("Target"))
+        {
+            Got = true;
+
+        }
+
+            
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Target"))
+        {
+            Got = true;
+
+        }
+
+    }
 }
