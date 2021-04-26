@@ -5,7 +5,16 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
 
-    [SerializeField] private GameObject[] _prefabLayout;
+    private GameObject[] _prefabLayout;
+
+    private void Start()
+    {
+        _prefabLayout = new GameObject[3];
+
+        _prefabLayout[0] = Resources.Load<GameObject>("Layout_Models/Model_1");
+        _prefabLayout[1] = Resources.Load<GameObject>("Layout_Models/Model_2");
+        _prefabLayout[2] = Resources.Load<GameObject>("Layout_Models/Model_3");
+    }
 
     private int RandomizeLayout()
     {
@@ -20,6 +29,6 @@ public class MapGenerator : MonoBehaviour
         layoutPosition.y = colliderPosition.y - 20;
         layoutPosition.z = 0;
 
-        Instantiate(_prefabLayout[RandomizeLayout()], layoutPosition, Quaternion.identity);
+        GameObject aux = GameObject.Instantiate(_prefabLayout[RandomizeLayout()], layoutPosition, Quaternion.identity);
     }
 }
