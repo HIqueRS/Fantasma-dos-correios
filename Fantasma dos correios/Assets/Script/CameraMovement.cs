@@ -16,6 +16,6 @@ public class CameraMovement : MonoBehaviour
     {
         transform.position -= new Vector3(0, _vel/ 3) * Time.deltaTime;
 
-        _vel += 0.1f * Time.deltaTime;
+        _vel += 0.05f * Time.deltaTime;
     }
 }

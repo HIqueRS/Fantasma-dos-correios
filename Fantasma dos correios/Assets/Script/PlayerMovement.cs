@@ -76,18 +76,25 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position += -transform.up * Time.deltaTime * _velocity;
 
-        _acceleration += 0.1f * Time.deltaTime;
-        _topVelocity += 0.1f * Time.deltaTime;
+        _acceleration += 0.025f * Time.deltaTime;
+        _topVelocity +=  0.05f * Time.deltaTime;
     }
 
    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Dog"))
+        
+        if (collision.gameObject.CompareTag("Dog"))
         {
             _velocity = 0;
             collision.gameObject.GetComponent<Dog>().Got = true;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        _velocity = 0;
     }
 }

@@ -26,7 +26,7 @@ public class Dog : MonoBehaviour
         if(!Got)
         {
             Follow();
-            _velocity += 0.1f * Time.deltaTime;
+            _velocity += 0.05f * Time.deltaTime;
         }
         else
         {
