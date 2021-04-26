@@ -12,6 +12,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private float _maxTime;
     [SerializeField] private Image _fill;
     [SerializeField] private UnityEvent _timeEnd;
+    [SerializeField] private AudioSource _gameMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class TimeManager : MonoBehaviour
         else
         {
             Cursor.visible = true;
+            _gameMusic.Stop();
             _timeEnd.Invoke();
             
         }
