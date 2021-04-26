@@ -33,7 +33,7 @@ public class GhostPlace : MonoBehaviour
     {
         if(_playerStats.LeftBeforeHaveGhost <= 0)
         {
-            _playerStats.LeftBeforeHaveGhost = Random.Range(2, 4);
+            _playerStats.LeftBeforeHaveGhost = 1;
             
             _leftOrRight = Random.Range(0, 2);
 
