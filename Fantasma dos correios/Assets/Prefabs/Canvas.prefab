@@ -95,6 +95,7 @@ MonoBehaviour:
   _timeEnd:
     m_PersistentCalls:
       m_Calls: []
+  _gameMusic: {fileID: 0}
 --- !u!1 &442433613700948702
 GameObject:
   m_ObjectHideFlags: 0
