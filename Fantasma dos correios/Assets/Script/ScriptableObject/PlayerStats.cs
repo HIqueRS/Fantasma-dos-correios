@@ -9,4 +9,6 @@ public class PlayerStats : ScriptableObject
     public float Time;
     public bool HasDog;
     public float Points;
+
+    public int LeftBeforeHaveGhost;
 }
