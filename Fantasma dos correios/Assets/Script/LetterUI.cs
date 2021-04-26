@@ -35,6 +35,15 @@ public class LetterUI : MonoBehaviour
 
     public void ChangeCount()
     {
-        _letterCount.text = string.Concat(_playerStats.Letters, " x");
+        if(_playerStats.Letters >= 0)
+        {
+            _letterCount.text = string.Concat(_playerStats.Letters, " x");
+        }
+
+        if(_playerStats.Letters < 0)
+        {
+            _playerStats.Letters = 0;
+        }
+       
     }
 }
