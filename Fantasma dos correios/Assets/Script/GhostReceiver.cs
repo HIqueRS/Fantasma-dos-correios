@@ -16,6 +16,8 @@ public class GhostReceiver : MonoBehaviour
     private bool _isFinished;
 
     private int _dogFleeChance;
+
+    private GameObject _aux;
    
 
     // Start is called before the first frame update
@@ -51,11 +53,14 @@ public class GhostReceiver : MonoBehaviour
 
                     _dogFleeChance = Random.Range(0, 100);
 
-                    if(_dogFleeChance < 100 && !_playerStats.HasDog)
+                    if(_dogFleeChance < 50 && !_playerStats.HasDog)
                     {
-                        Instantiate<GameObject>(Resources.Load<GameObject>("DOG"), this.transform.position, Quaternion.identity);
+                        _aux = Instantiate<GameObject>(Resources.Load<GameObject>("DOG"), this.transform.position, Quaternion.identity);
 
                         _playerStats.HasDog = true;
+
+                        _aux.GetComponent<Dog>()._velocity = _playerStats.PlayerVelocity * 2 / 3;
+
                     }
                 }
                 else
