@@ -43,6 +43,7 @@ public class GhostReceiver : MonoBehaviour
 
                     _getLetter.Invoke();
                     _playerStats.Time += _timeBonus;
+                    _playerStats.Points += _timeBonus*10f;
 
                     _isFinished = true;
                 }

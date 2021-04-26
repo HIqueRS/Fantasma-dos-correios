@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _acceleration = 1f;
     private float _velocity;
 
+    [SerializeField] private PlayerStats _playerStats;
+
     private void Update()
     {
         Input_movement();
@@ -89,6 +91,10 @@ public class PlayerMovement : MonoBehaviour
         {
             _velocity = 0;
             collision.gameObject.GetComponent<Dog>().Got = true;
+        }
+        if (collision.gameObject.CompareTag("End"))
+        {
+            _playerStats.Time = 0;
         }
     }
 

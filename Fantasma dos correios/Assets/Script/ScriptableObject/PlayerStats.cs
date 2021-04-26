@@ -8,4 +8,5 @@ public class PlayerStats : ScriptableObject
     public int Letters;
     public float Time;
     public bool HasDog;
+    public float Points;
 }
