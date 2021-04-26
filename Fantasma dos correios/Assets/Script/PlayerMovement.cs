@@ -14,10 +14,15 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private AudioSource _collisionAudioSource;
 
+    private void Start()
+    {
+        _playerStats.HasDog = false;
+    }
 
     private void Update()
     {
         Input_movement();
+
     }
 
     private void Input_movement()
@@ -98,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
             _velocity = 0;
             collision.gameObject.GetComponent<Dog>().Got = true;
             _playerStats.Letters--;
+            _playerStats.HasDog = false;
         }
         if (collision.gameObject.CompareTag("End"))
         {
