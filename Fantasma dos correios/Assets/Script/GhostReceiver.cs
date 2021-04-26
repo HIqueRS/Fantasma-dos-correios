@@ -54,6 +54,8 @@ public class GhostReceiver : MonoBehaviour
                     if(_dogFleeChance < 100)
                     {
                         Instantiate<GameObject>(Resources.Load<GameObject>("DOG"), this.transform.position, Quaternion.identity);
+
+                        _playerStats.HasDog = true;
                     }
                 }
                 else

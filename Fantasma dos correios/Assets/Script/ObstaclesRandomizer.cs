@@ -34,7 +34,7 @@ public class ObstaclesRandomizer : MonoBehaviour
 
                 if (_playerStats.HasDog && !_boneInstantiated)
                 {
-                    if(randomObjectNumber < 50)
+                    if(randomObjectNumber < 75)
                     {
                         Instantiate(Resources.Load<GameObject>("Bone"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
 
