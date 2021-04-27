@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _playerStats.HasDog = false;
+        _playerStats.pause = false;
     }
 
     private void Update()
