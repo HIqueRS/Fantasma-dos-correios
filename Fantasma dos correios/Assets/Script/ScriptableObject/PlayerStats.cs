@@ -11,4 +11,5 @@ public class PlayerStats : ScriptableObject
     public float Points;
     public float PlayerVelocity;
     public int LeftBeforeHaveGhost;
+    public bool pause;
 }

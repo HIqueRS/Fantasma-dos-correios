@@ -31,6 +31,7 @@ public class TimeManager : MonoBehaviour
         }
         else
         {
+            _playerStats.pause = true;
             Cursor.visible = true;
             _gameMusic.Stop();
             _timeEnd.Invoke();
