@@ -13,7 +13,6 @@ public class MovingObstacles : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         _playerStats.Letters--;
-
         _changeUI.Invoke();
     }
 }

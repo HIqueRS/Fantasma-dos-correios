@@ -61,7 +61,8 @@ public class AgentGhost : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(_rb2D.velocity);
+        sensor.AddObservation(_rb2D.velocity.normalized);
+        sensor.AddObservation(_rb2D.rotation);
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -95,6 +96,32 @@ public class AgentGhost : Agent
             Quaternion wantedRotation = Quaternion.Euler(0, 0, 90);
             transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
         }
+        if (movementWS == 1 && movementAD == 2) //W AND D
+        {
+            Quaternion currentRotation = transform.rotation;
+            Quaternion wantedRotation = Quaternion.Euler(0, 0, 135);
+            transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
+        }
+        if (movementWS == 1 && movementAD == 1) //W AND A
+        {
+            Quaternion currentRotation = transform.rotation;
+            Quaternion wantedRotation = Quaternion.Euler(0, 0, 225);
+            transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
+        }
+        if (movementWS == 2 && movementAD == 1) //S AND A
+        {
+            Quaternion currentRotation = transform.rotation;
+            Quaternion wantedRotation = Quaternion.Euler(0, 0, 315);
+            transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
+        }
+        if (movementWS == 2 && movementAD == 1) //S AND D
+        {
+            Quaternion currentRotation = transform.rotation;
+            Quaternion wantedRotation = Quaternion.Euler(0, 0, 45);
+            transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
+        }
+
+
 
         if (_velocity < _topVelocity)
         {
@@ -119,23 +146,43 @@ public class AgentGhost : Agent
         }
         if (Input.GetKey(KeyCode.S))
         {
-            discreteActionsOut[0] = 1;
+            discreteActionsOut[0] = 2;
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.A))
+        {
+            discreteActionsOut[1] = 1;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            discreteActionsOut[1] = 2;
+        }
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
         {
             discreteActionsOut[0] = 1;
+            discreteActionsOut[1] = 2;
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
             discreteActionsOut[0] = 1;
+            discreteActionsOut[1] = 1;
         }
-
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+        {
+            discreteActionsOut[0] = 2;
+            discreteActionsOut[1] = 2;
+        }
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+        {
+            discreteActionsOut[0] = 2;
+            discreteActionsOut[1] = 1;
+        }
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Rot" + _rb2D.rotation);
         //Input_movement();
 
         if (Input.GetMouseButtonDown(0))
@@ -238,13 +285,19 @@ public class AgentGhost : Agent
 
         if (collision.gameObject.CompareTag("Dog"))
         {
+            AddReward(-0.5f);
             _velocity = 0;
             collision.gameObject.GetComponent<Dog>().Got = true;
             _playerStats.Letters--;
             _playerStats.HasDog = false;
         }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            AddReward(-0.5f);
+        }
         if (collision.gameObject.CompareTag("End"))
         {
+            AddReward(-1f);
             _playerStats.Time = 0;
         }
     }
