@@ -54,22 +54,46 @@ public class AgentGhost : Agent
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        Vector3 movements = Vector3.zero;
-        movements.x = actionBuffers.ContinuousActions[0]; //Horizontal
-        movements.y = actionBuffers.ContinuousActions[1]; //Cuma/Baixo
+        int movementWS; //nada(0), W(1), S(2)
+        int movementAD; //nada(0), A(1), D(2)
+        movementWS = actionBuffers.DiscreteActions[0]; 
+        movementAD = actionBuffers.DiscreteActions[1]; 
 
-        if(movements.x == 1 )
+        if(movementWS== 1 && movementAD == 0) //W only
+        {
+            Quaternion currentRotation = transform.rotation;
+            Quaternion wantedRotation = Quaternion.Euler(0, 0, 180);
+            transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
+        }
+
+        if (_velocity < _topVelocity)
+        {
+            _velocity += Time.deltaTime * _acceleration;
+        }
+
+        transform.position += -transform.up * Time.deltaTime * _velocity;
+
+        _acceleration += 0.0125f * Time.deltaTime;
+        _topVelocity += 0.05f * Time.deltaTime;
+
+        _playerStats.PlayerVelocity = _topVelocity;
 
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
+        var discreteActionsOut = actionsOut.DiscreteActions;
+        if (Input.GetKey(KeyCode.W))
+        {
+            discreteActionsOut[0] = 1;
+        }
+           
     }
 
         // Update is called once per frame
     void Update()
     {
-        Input_movement();
+        //Input_movement();
 
         if (Input.GetMouseButtonDown(0))
         {

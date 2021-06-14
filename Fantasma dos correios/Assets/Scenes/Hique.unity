@@ -969,6 +969,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 205928260}
     m_Modifications:
+    - target: {fileID: -2407040891817822470, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
+      propertyPath: m_BehaviorName
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: -2407040891817822470, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2407040891817822470, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2407040891817822470, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2407040891817822470, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2407040891817822470, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2407040891817822470, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1268792991811325771, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
       propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1028,26 +1056,6 @@ PrefabInstance:
     - target: {fileID: 7831676694409932355, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
       propertyPath: m_Name
       value: Agent
-      objectReference: {fileID: 0}
-    - target: {fileID: 8729179482950254820, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
-      propertyPath: m_RayLength
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8729179482950254820, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
-      propertyPath: m_RaysPerDirection
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8729179482950254820, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
-      propertyPath: m_SphereCastRadius
-      value: 6.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 8729179482950254820, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
-      propertyPath: m_DetectableTags.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8729179482950254820, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
-      propertyPath: m_DetectableTags.Array.data[0]
-      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608bb5e4384e4f247ba9a99f246a18f9, type: 3}
