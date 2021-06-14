@@ -40,7 +40,7 @@ public class AgentGhost : Agent
         _playerStats.pause = false;
     }
 
-    public override void OnEpisodeBegin()
+    /*public override void OnEpisodeBegin()
     {
         SceneManager.LoadScene(1);
     }
@@ -56,7 +56,7 @@ public class AgentGhost : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-    }
+    }*/
 
         // Update is called once per frame
         void Update()
