@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8997793357108356296}
   - component: {fileID: 1793183796392063154}
   - component: {fileID: 2636594102811625866}
+  - component: {fileID: 3955739158825410326}
   m_Layer: 6
   m_Name: Player
   m_TagString: Target
@@ -477,3 +478,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3955739158825410326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631130124027317698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31290a20234add248b3630d81aca0536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _letter:
+  - {fileID: 5091941835470225365, guid: cffbaa0442d759f4f9bd21285079d7d2, type: 3}
+  - {fileID: 7568483438710901228, guid: e2d21067eb49dfe439c6bfa740635987, type: 3}
+  - {fileID: 7693031735523964666, guid: 3216464c130f2314790977965467ffbb, type: 3}
+  _playerStats: {fileID: 11400000, guid: 0dc8866da6d50914d96c45692bbc8e19, type: 2}
+  _changeLetter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _shoot:
+    m_PersistentCalls:
+      m_Calls: []
+  _rotationVelocity: 200
+  _topVelocity: 3
+  _acceleration: 0.5
+  _collisionAudioSource: {fileID: 1793183796392063154}
