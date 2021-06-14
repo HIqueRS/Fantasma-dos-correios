@@ -7,7 +7,7 @@ using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using UnityEngine.SceneManagement;
 
-public class Agent : MonoBehaviour
+public class AgentGhost : Agent
 {
     //ML AGENTS
     private RayPerceptionSensorComponent2D _rayPerception;
