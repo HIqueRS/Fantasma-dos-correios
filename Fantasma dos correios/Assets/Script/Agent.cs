@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Unity.MLAgents;
+using Unity.MLAgents.Sensors;
+using Unity.MLAgents.Actuators;
+using UnityEngine.SceneManagement;
 
-public class PlayerMerge : MonoBehaviour
+public class Agent : MonoBehaviour
 {
-
+    //ML AGENTS
+    private RayPerceptionSensorComponent2D _rayPerception;
+   
     [SerializeField] private GameObject[] _letter;
     [SerializeField] private PlayerStats _playerStats;
     private Vector3 _shootDirection;
@@ -27,15 +33,33 @@ public class PlayerMerge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         _letterID = 3;
         _playerStats.Letters = 5;
-
         _playerStats.HasDog = false;
         _playerStats.pause = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnEpisodeBegin()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public override void CollectObservations(VectorSensor sensor)
+    {
+ 
+    }
+
+    public override void OnActionReceived(ActionBuffers actionBuffers)
+    {
+    }
+
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+    }
+
+        // Update is called once per frame
+        void Update()
     {
         Input_movement();
 
