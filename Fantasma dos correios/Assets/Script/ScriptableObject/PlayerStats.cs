@@ -10,6 +10,6 @@ public class PlayerStats : ScriptableObject
     public bool HasDog;
     public float Points;
     public float PlayerVelocity;
-    //public int LeftBeforeHaveGhost;
+    public int LeftBeforeHaveGhost;
     public bool pause;
 }
