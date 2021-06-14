@@ -13,6 +13,8 @@ public class AgentGhost : Agent
     private RayPerceptionSensorComponent2D _rayPerception;
     private Rigidbody2D _rb2D;
 
+    private bool _firstTime;
+
     [SerializeField] private GameObject[] _letter;
     [SerializeField] private PlayerStats _playerStats;
     private Vector3 _shootDirection;
@@ -40,11 +42,21 @@ public class AgentGhost : Agent
         _playerStats.Letters = 5;
         _playerStats.HasDog = false;
         _playerStats.pause = false;
+
+        _firstTime = true;
     }
 
     public override void OnEpisodeBegin()
     {
-        SceneManager.LoadScene(2);
+        if (!_firstTime)
+        {
+            SceneManager.LoadScene(2);
+        }
+        else
+        {
+            _firstTime = false;
+        }
+        
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -89,6 +101,7 @@ public class AgentGhost : Agent
         }
 
     }
+
 
     // Update is called once per frame
     void Update()
