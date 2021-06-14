@@ -916,49 +916,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1053108362}
     - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      propertyPath: _playerStats
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _changeLetter.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      propertyPath: _letter.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
       propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1550274338}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1171692329}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeCount
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _changeLetter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
       propertyPath: _changeLetter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -967,46 +935,6 @@ PrefabInstance:
       propertyPath: _changeLetter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1053108365}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _changeLetter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _changeLetter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeLetterUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _changeLetter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: MouseChange
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LetterUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _changeLetter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LetterUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _changeLetter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Mouse, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _shoot.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659359959753055106, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
-      propertyPath: _changeLetter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4631130124027317696, guid: 4216d9fccb58795429058b44c63bca68, type: 3}
       propertyPath: m_RootOrder
       value: 2

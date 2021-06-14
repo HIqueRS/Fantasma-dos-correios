@@ -48,7 +48,7 @@ public class GhostReceiver : MonoBehaviour
                     GameObject.Destroy(collision.gameObject);
 
                     _getLetter.Invoke();
-                    _playerStats.Time += _timeBonus;
+                    _playerStats.Time += _timeBonus - (_playerStats.PlayerVelocity * 0.8f );
                     _playerStats.Points += _timeBonus*10f;
 
                     _isFinished = true;
@@ -61,7 +61,7 @@ public class GhostReceiver : MonoBehaviour
 
                         _playerStats.HasDog = true;
 
-                        _aux.GetComponent<Dog>()._velocity = _playerStats.PlayerVelocity * 2 / 3;
+                        //_aux.GetComponent<Dog>()._velocity = _playerStats.PlayerVelocity * 2 / 3;
 
                     }
                 }
