@@ -9,6 +9,8 @@ TagManager:
   - Target
   - Dog
   - End
+  - Obstacle
+  - Enemy
   layers:
   - Default
   - TransparentFX
