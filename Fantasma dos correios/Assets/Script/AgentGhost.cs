@@ -11,6 +11,7 @@ public class AgentGhost : Agent
 {
     //ML AGENTS
     private RayPerceptionSensorComponent2D _rayPerception;
+    private Rigidbody2D _rb2D;
    
     [SerializeField] private GameObject[] _letter;
     [SerializeField] private PlayerStats _playerStats;
@@ -33,7 +34,8 @@ public class AgentGhost : Agent
     // Start is called before the first frame update
     void Start()
     {
-
+        _rayPerception = GetComponent<RayPerceptionSensorComponent2D>();
+        _rb2D = GetComponent<Rigidbody2D>();
         _letterID = 3;
         _playerStats.Letters = 5;
         _playerStats.HasDog = false;
@@ -47,11 +49,17 @@ public class AgentGhost : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
- 
+        sensor.AddObservation(_rb2D.velocity);
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
+        Vector3 movements = Vector3.zero;
+        movements.x = actionBuffers.ContinuousActions[0]; //Horizontal
+        movements.y = actionBuffers.ContinuousActions[1]; //Cuma/Baixo
+
+        if(movements.x == 1 )
+
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -59,7 +67,7 @@ public class AgentGhost : Agent
     }
 
         // Update is called once per frame
-        void Update()
+    void Update()
     {
         Input_movement();
 
