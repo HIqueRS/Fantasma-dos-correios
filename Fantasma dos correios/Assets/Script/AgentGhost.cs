@@ -77,6 +77,24 @@ public class AgentGhost : Agent
             Quaternion wantedRotation = Quaternion.Euler(0, 0, 180);
             transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
         }
+        if (movementWS == 2 && movementAD == 0) //S only
+        {
+            Quaternion currentRotation = transform.rotation;
+            Quaternion wantedRotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
+        }
+        if (movementWS == 0 && movementAD == 1) //A only
+        {
+            Quaternion currentRotation = transform.rotation;
+            Quaternion wantedRotation = Quaternion.Euler(0, 0, 270);
+            transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
+        }
+        if (movementWS == 0 && movementAD == 2) //D only
+        {
+            Quaternion currentRotation = transform.rotation;
+            Quaternion wantedRotation = Quaternion.Euler(0, 0, 90);
+            transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
+        }
 
         if (_velocity < _topVelocity)
         {
@@ -95,6 +113,18 @@ public class AgentGhost : Agent
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         var discreteActionsOut = actionsOut.DiscreteActions;
+        if (Input.GetKey(KeyCode.W))
+        {
+            discreteActionsOut[0] = 1;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            discreteActionsOut[0] = 1;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            discreteActionsOut[0] = 1;
+        }
         if (Input.GetKey(KeyCode.W))
         {
             discreteActionsOut[0] = 1;

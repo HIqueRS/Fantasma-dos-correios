@@ -881,9 +881,11 @@ MonoBehaviour:
   m_SensorName: RayPerceptionSensor
   m_DetectableTags:
   - Enemy
+  - Obstacle
+  - Dog
   m_RaysPerDirection: 3
   m_MaxRayDegrees: 70
-  m_SphereCastRadius: 7.01
+  m_SphereCastRadius: 5.02
   m_RayLength: 20
   m_RayLayerMask:
     serializedVersion: 2
