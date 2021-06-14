@@ -31,32 +31,19 @@ public class GhostPlace : MonoBehaviour
 
     private void DefineIfHasGhost()
     {
-        if(_playerStats.LeftBeforeHaveGhost <= 0)
+        _leftOrRight = Random.Range(0, 2);
+    
+        if(_leftOrRight == 0)
         {
-            _playerStats.LeftBeforeHaveGhost = 1;
-            
-            _leftOrRight = Random.Range(0, 2);
-
-            if(_leftOrRight == 0)
-            {
-                Instantiate(Resources.Load<GameObject>("LeftHouse"), _ghostPlacePosition[0], Quaternion.identity, _ghostPlace[0].transform);
-
-                Instantiate(Resources.Load<GameObject>("RightWall"), _ghostPlacePosition[1], Quaternion.identity, _ghostPlace[1].transform);
-            }
-            else
-            {
-                Instantiate(Resources.Load<GameObject>("RightHouse"), _ghostPlacePosition[1], Quaternion.identity, _ghostPlace[1].transform);
-
-                Instantiate(Resources.Load<GameObject>("LeftWall"), _ghostPlacePosition[0], Quaternion.identity, _ghostPlace[0].transform);
-            }
+            Instantiate(Resources.Load<GameObject>("LeftHouse"), _ghostPlacePosition[0], Quaternion.identity, _ghostPlace[0].transform);
+    
+            Instantiate(Resources.Load<GameObject>("RightWall"), _ghostPlacePosition[1], Quaternion.identity, _ghostPlace[1].transform);
         }
         else
         {
-            Instantiate(Resources.Load<GameObject>("RightWall"), _ghostPlacePosition[1], Quaternion.identity, _ghostPlace[1].transform);
-
+            Instantiate(Resources.Load<GameObject>("RightHouse"), _ghostPlacePosition[1], Quaternion.identity, _ghostPlace[1].transform);
+    
             Instantiate(Resources.Load<GameObject>("LeftWall"), _ghostPlacePosition[0], Quaternion.identity, _ghostPlace[0].transform);
-
-            _playerStats.LeftBeforeHaveGhost--;
         }
     }
 }

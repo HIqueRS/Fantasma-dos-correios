@@ -34,61 +34,12 @@ public class ObstaclesRandomizer : MonoBehaviour
 
                 if (_playerStats.HasDog && !_boneInstantiated)
                 {
-                    if(randomObjectNumber < 75)
-                    {
-                        Instantiate(Resources.Load<GameObject>("Bone"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                    Instantiate(Resources.Load<GameObject>("Bone"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
 
-                        _boneInstantiated = true;
-                    }
-                    else if(_playerStats.Letters <= 2)
-                    {
-                        Instantiate(Resources.Load<GameObject>("Letter"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
-                    }
-                    else if(_playerStats.Letters == 3)
-                    {
-                        if (randomObjectNumber >= 75 && randomObjectNumber < 75 + 12)
-                        {
-                            Instantiate(Resources.Load<GameObject>("Letter"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
-                        }
-                        else if(randomObjectNumber >= 75 + 12 && randomObjectNumber < 75 + 19)
-                        {
-                            Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
-                        }
-                        else
-                        {
-                            Instantiate(Resources.Load<GameObject>("Skull"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
-                        }
-                    }
-                    else if (_playerStats.Letters == 4)
-                    {
-                        if (randomObjectNumber >= 75 && randomObjectNumber < 75 + 6)
-                        {
-                            Instantiate(Resources.Load<GameObject>("Letter"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
-                        }
-                        else if (randomObjectNumber >= 75 + 6 && randomObjectNumber < 75 + 16)
-                        {
-                            Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
-                        }
-                        else
-                        {
-                            Instantiate(Resources.Load<GameObject>("Skull"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
-                        }
-                    }
-                    else
-                    {
-                        if (randomObjectNumber >= 75 && randomObjectNumber < 75 + 12)
-                        {
-                            Instantiate(Resources.Load<GameObject>("Tomb"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
-                        }
-                        else
-                        {
-                            Instantiate(Resources.Load<GameObject>("Skull"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
-                        }
-                    }
+                    _boneInstantiated = true;
                 }
                 else
                 {
-
                     if (!_letterInstantiated)
                     {
                         switch (_playerStats.Letters)
