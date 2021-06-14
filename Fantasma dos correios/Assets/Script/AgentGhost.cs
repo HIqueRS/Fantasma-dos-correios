@@ -11,7 +11,8 @@ public class AgentGhost : Agent
 {
     //ML AGENTS
     private RayPerceptionSensorComponent2D _rayPerception;
-   
+    private Rigidbody2D _rb2D;
+
     [SerializeField] private GameObject[] _letter;
     [SerializeField] private PlayerStats _playerStats;
     private Vector3 _shootDirection;
@@ -33,35 +34,66 @@ public class AgentGhost : Agent
     // Start is called before the first frame update
     void Start()
     {
-
+        _rayPerception = GetComponent<RayPerceptionSensorComponent2D>();
+        _rb2D = GetComponent<Rigidbody2D>();
         _letterID = 3;
         _playerStats.Letters = 5;
         _playerStats.HasDog = false;
         _playerStats.pause = false;
     }
 
-    /*public override void OnEpisodeBegin()
+    public override void OnEpisodeBegin()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
- 
+        sensor.AddObservation(_rb2D.velocity);
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
+        int movementWS; //nada(0), W(1), S(2)
+        int movementAD; //nada(0), A(1), D(2)
+        movementWS = actionBuffers.DiscreteActions[0];
+        movementAD = actionBuffers.DiscreteActions[1];
+
+        if (movementWS == 1 && movementAD == 0) //W only
+        {
+            Quaternion currentRotation = transform.rotation;
+            Quaternion wantedRotation = Quaternion.Euler(0, 0, 180);
+            transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
+        }
+
+        if (_velocity < _topVelocity)
+        {
+            _velocity += Time.deltaTime * _acceleration;
+        }
+
+        transform.position += -transform.up * Time.deltaTime * _velocity;
+
+        _acceleration += 0.0125f * Time.deltaTime;
+        _topVelocity += 0.05f * Time.deltaTime;
+
+        _playerStats.PlayerVelocity = _topVelocity;
+
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-    }*/
+        var discreteActionsOut = actionsOut.DiscreteActions;
+        if (Input.GetKey(KeyCode.W))
+        {
+            discreteActionsOut[0] = 1;
+        }
 
-        // Update is called once per frame
-        void Update()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-        Input_movement();
+        //Input_movement();
 
         if (Input.GetMouseButtonDown(0))
         {

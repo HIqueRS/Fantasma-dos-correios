@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hique.unity
     guid: 64f38919e15147147b34b044f6a8265b
+  - enabled: 1
+    path: Assets/Scenes/IA_MLAgents.unity
+    guid: a826e7a30c0cbc7429d3c4f2eb99c87b
   m_configObjects: {}
