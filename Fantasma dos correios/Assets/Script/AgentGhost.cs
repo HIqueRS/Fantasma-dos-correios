@@ -298,6 +298,7 @@ public class AgentGhost : Agent
         if (collision.gameObject.CompareTag("End"))
         {
             AddReward(-1f);
+            //EndEpisode();
             _playerStats.Time = 0;
         }
     }

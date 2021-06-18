@@ -15,6 +15,8 @@ public class LetterUI : MonoBehaviour
 
     private int _letterID;
 
+
+    
     // Start is called before the first frame update
     private void Start()
     {
