@@ -17,12 +17,9 @@ public class CameraMovement : MonoBehaviour
     {
         if(!playerStats.pause)
         {
-            _vel = playerStats.PlayerVelocity;
-
             transform.position -= new Vector3(0, _vel / 3) * Time.deltaTime;
 
-            
-            //_vel += 0.05f * Time.deltaTime;
+            _vel += 0.05f * Time.deltaTime;
         }
         
     }

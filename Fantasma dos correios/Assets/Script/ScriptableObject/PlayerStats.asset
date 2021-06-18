@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc0e775093f7944ea81c3946928ca8c, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  Letters: 0
-  Time: 38.575718
+  Letters: 3
+  Time: 6
   HasDog: 0
-  Points: 11.424282
-  PlayerVelocity: 3.5712118
-  LeftBeforeHaveGhost: 1
-  pause: 0
+  Points: 60
+  LeftBeforeHaveGhost: 0
