@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6939033870384157155}
   m_Layer: 0
   m_Name: Clock
-  m_TagString: Untagged
+  m_TagString: Clock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,6 +96,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0080759525, y: 0}
   serializedVersion: 2
-  m_Radius: 0.34285715
+  m_Radius: 0.53668

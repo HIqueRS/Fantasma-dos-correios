@@ -8,13 +8,13 @@ public class ObstaclesRandomizer : MonoBehaviour
 
     [SerializeField] private PlayerStats _playerStats;
 
-    private bool _boneInstantiated;
+    private bool _clockInstantiated;
     private bool _letterInstantiated;
 
     void Start()
     {
 
-        _boneInstantiated = false;
+        _clockInstantiated = false;
         _letterInstantiated = false;
 
         RandomizeObjects();
@@ -32,11 +32,12 @@ public class ObstaclesRandomizer : MonoBehaviour
             if (obstacle.CompareTag("Colectable"))
             {
 
-                if (_playerStats.HasDog && !_boneInstantiated)
+                if (_playerStats.Time < 40  && !_clockInstantiated)
                 {
-                    Instantiate(Resources.Load<GameObject>("Bone"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                    Instantiate(Resources.Load<GameObject>("Clock"), obstacle.transform.position, Quaternion.identity, obstacle.transform);
+                    //Debug.Log("Vai relogio");
 
-                    _boneInstantiated = true;
+                    _clockInstantiated = true;
                 }
                 else
                 {

@@ -11,6 +11,7 @@ TagManager:
   - End
   - Obstacle
   - Enemy
+  - Clock
   layers:
   - Default
   - TransparentFX

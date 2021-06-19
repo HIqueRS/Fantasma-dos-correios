@@ -28,7 +28,7 @@ public class GhostReceiver : MonoBehaviour
         
         _letterRequestGameobj.sprite = _letterRequestSprites[_letterRequestID];
 
-        
+        _timeBonus = _playerStats.BonusTime;
     }
 
     // Update is called once per frame
@@ -48,20 +48,20 @@ public class GhostReceiver : MonoBehaviour
                     GameObject.Destroy(collision.gameObject);
 
                     _getLetter.Invoke();
-                    _playerStats.Time += _timeBonus;
+                    _playerStats.Time += _timeBonus - (_playerStats.PlayerVelocity * 0.8f);
                     _playerStats.Points += _timeBonus*10f;
 
                     _isFinished = true;
 
                     _dogFleeChance = Random.Range(0, 100);
 
-                    if(_dogFleeChance < 75 && !_playerStats.HasDog)
+                    if(_dogFleeChance < 50 && !_playerStats.HasDog)
                     {
                         _aux = Instantiate<GameObject>(Resources.Load<GameObject>("DOG"), this.transform.position, Quaternion.identity);
 
                         _playerStats.HasDog = true;
 
-                        _aux.GetComponent<Dog>()._velocity = _playerStats.PlayerVelocity * 2 / 3;
+                        //_aux.GetComponent<Dog>()._velocity = _playerStats.PlayerVelocity * 2 / 3;
 
                     }
                 }

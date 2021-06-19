@@ -13,6 +13,16 @@ public class AgentGhost : Agent
     private RayPerceptionSensorComponent2D _rayPerception;
     private Rigidbody2D _rb2D;
 
+    private Transform _playerStartPosition;
+    private float _playerStartVelocity;
+    private float _playerStartAcceleration;
+    [SerializeField] GameObject _player;
+    [SerializeField] GameObject _modeloInicio;
+    private GameObject _modelo1;
+    private Vector3 _modelo1Position;
+    [SerializeField]private GameObject[] _gameLayouts;
+    private int _inicioVetor = 1;
+
     private bool _firstTime;
 
     [SerializeField] private GameObject[] _letter;
@@ -36,6 +46,10 @@ public class AgentGhost : Agent
     // Start is called before the first frame update
     void Start()
     {
+        // _gameLayouts = new GameObject[3];
+
+        _modelo1 = Resources.Load<GameObject>("Layout_Models/Model_1");
+
         _rayPerception = GetComponent<RayPerceptionSensorComponent2D>();
         _rb2D = GetComponent<Rigidbody2D>();
         _letterID = 3;
@@ -44,13 +58,45 @@ public class AgentGhost : Agent
         _playerStats.pause = false;
 
         _firstTime = true;
+
+        _playerStartPosition = this.transform;
+        _playerStartVelocity = 3f;
+        _playerStartAcceleration = _acceleration;
+
     }
 
     public override void OnEpisodeBegin()
     {
         if (!_firstTime)
         {
-            SceneManager.LoadScene(2);
+            if (_modeloInicio != null)
+            {
+                Destroy(_modeloInicio);
+            }
+
+            _modelo1Position = Vector3.zero;
+
+            _modeloInicio = Instantiate<GameObject>(_modelo1, _modelo1Position, Quaternion.identity);
+
+            _player.transform.position = new Vector3(0f, 1.5f, 0);
+            _player.transform.rotation = _playerStartPosition.rotation;
+
+            foreach(GameObject layout in _gameLayouts)
+            {
+                if (layout != null)
+                {
+                    Destroy(layout);
+                }
+            }
+
+            _playerStats.PlayerVelocity = _playerStartVelocity;
+            _velocity = 0;
+            _acceleration = _playerStartAcceleration;
+            _topVelocity = _playerStartVelocity;
+
+            Camera.main.transform.position = new Vector3(0f, 0f, -10f);
+
+            _playerStats.Time = 70;
         }
         else
         {
@@ -131,7 +177,7 @@ public class AgentGhost : Agent
         transform.position += -transform.up * Time.deltaTime * _velocity;
 
         _acceleration += 0.0125f * Time.deltaTime;
-        _topVelocity += 0.05f * Time.deltaTime;
+        _topVelocity += 0.03f * Time.deltaTime;
 
         _playerStats.PlayerVelocity = _topVelocity;
 
@@ -182,7 +228,7 @@ public class AgentGhost : Agent
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Rot" + _rb2D.rotation);
+        //Debug.Log("Rot" + _rb2D.rotation);
         //Input_movement();
 
         if (Input.GetMouseButtonDown(0))
@@ -273,7 +319,7 @@ public class AgentGhost : Agent
         transform.position += -transform.up * Time.deltaTime * _velocity;
 
         _acceleration += 0.0125f * Time.deltaTime;
-        _topVelocity += 0.05f * Time.deltaTime;
+        _topVelocity += 0.03f * Time.deltaTime;
 
         _playerStats.PlayerVelocity = _topVelocity;
     }
@@ -299,6 +345,15 @@ public class AgentGhost : Agent
         {
             AddReward(-1f);
             _playerStats.Time = 0;
+            Debug.Log("End");
+            EndEpisode();
+        }
+        if (collision.gameObject.CompareTag("Clock"))
+        {
+            AddReward(1f);
+            _playerStats.Time += _playerStats.BonusTime - (_playerStats.PlayerVelocity * 0.8f);
+
+            Destroy(collision.gameObject);
         }
     }
 
@@ -310,5 +365,17 @@ public class AgentGhost : Agent
         _collisionAudioSource.Play();
 
 
+    }
+
+    public void SetModel(GameObject model)
+    {
+        _gameLayouts[_inicioVetor] = model;
+
+        _inicioVetor++;
+
+        if (_inicioVetor >= 2)
+        {
+            _inicioVetor = 0;
+        }
     }
 }
