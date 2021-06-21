@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 760860377130168955}
   - component: {fileID: 2074346846935376691}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Background1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,6 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _manager: {fileID: 6707786793806727141}
   _obstaclesRandomizer: {fileID: 3902701761297860075}
+  _player: {fileID: 0}
 --- !u!1 &5819517207923363261
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1750978485596102453}
   - component: {fileID: 2010147846776027765}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Background1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 126945809901382357}
   - component: {fileID: 2827819492223802853}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Background1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7695458628096784723}
   - component: {fileID: 7407154341319376226}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Background1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

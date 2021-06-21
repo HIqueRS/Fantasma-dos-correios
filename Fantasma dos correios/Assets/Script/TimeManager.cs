@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+
 public class TimeManager : MonoBehaviour
 {
 
@@ -35,7 +36,7 @@ public class TimeManager : MonoBehaviour
             Cursor.visible = true;
             //_gameMusic.Stop();
             _timeEnd.Invoke();
-            
+                   
         }
 
         _fill.fillAmount = _playerStats.Time / _maxTime;

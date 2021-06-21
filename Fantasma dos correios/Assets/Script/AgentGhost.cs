@@ -107,8 +107,10 @@ public class AgentGhost : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(_rb2D.velocity.normalized);
-        sensor.AddObservation(_rb2D.rotation);
+        sensor.AddObservation(_playerStats.Time);
+        sensor.AddObservation(_rb2D.velocity.normalized); //Direção
+        sensor.AddObservation(_rb2D.velocity); //Velocidade
+        sensor.AddObservation(_rb2D.rotation); //Rotação
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -160,7 +162,7 @@ public class AgentGhost : Agent
             Quaternion wantedRotation = Quaternion.Euler(0, 0, 315);
             transform.rotation = Quaternion.RotateTowards(currentRotation, wantedRotation, Time.deltaTime * _rotationVelocity);
         }
-        if (movementWS == 2 && movementAD == 1) //S AND D
+        if (movementWS == 2 && movementAD == 2) //S AND D
         {
             Quaternion currentRotation = transform.rotation;
             Quaternion wantedRotation = Quaternion.Euler(0, 0, 45);
@@ -181,6 +183,7 @@ public class AgentGhost : Agent
 
         _playerStats.PlayerVelocity = _topVelocity;
 
+        AddReward(0.005f);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -228,6 +231,10 @@ public class AgentGhost : Agent
     // Update is called once per frame
     void Update()
     {
+        if (_playerStats.Time < 1)
+        {
+            AddReward(-1f);
+        }
         //Debug.Log("Rot" + _rb2D.rotation);
         //Input_movement();
 
@@ -343,7 +350,7 @@ public class AgentGhost : Agent
         }
         if (collision.gameObject.CompareTag("End"))
         {
-            AddReward(-1f);
+            AddReward(-2f);
             _playerStats.Time = 0;
             Debug.Log("End");
             EndEpisode();

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5353596565367338592}
   - component: {fileID: 5484998814949171642}
   - component: {fileID: 1331267481005388577}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tomb
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
