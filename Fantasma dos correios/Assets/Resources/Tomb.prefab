@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5353596565367338592}
   - component: {fileID: 5484998814949171642}
   - component: {fileID: 1331267481005388577}
+  - component: {fileID: 1714949690011112122}
   m_Layer: 0
   m_Name: Tomb
   m_TagString: Untagged
@@ -90,7 +91,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4047369947936718467}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -109,3 +110,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1638336, y: 1.31814}
   m_EdgeRadius: 0
+--- !u!58 &1714949690011112122
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4047369947936718467}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03150233, y: -0.014319102}
+  serializedVersion: 2
+  m_Radius: 0.66951275
