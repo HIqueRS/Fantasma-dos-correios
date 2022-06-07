@@ -21,6 +21,8 @@ public class Dog : MonoBehaviour
         _closer = Vector2.zero;
 
         Got = false;
+
+        _velocity = _playerStats.PlayerVelocity * 0.6f ;
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class Dog : MonoBehaviour
         if(!Got)
         {
             Follow();
-            _velocity += 0.05f * Time.deltaTime;
+            _velocity = _playerStats.PlayerVelocity * 0.6f;
         }
         else
         {

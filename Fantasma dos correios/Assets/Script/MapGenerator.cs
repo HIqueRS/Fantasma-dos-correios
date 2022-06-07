@@ -26,7 +26,7 @@ public class MapGenerator : MonoBehaviour
         Vector3 layoutPosition;
 
         layoutPosition.x = 0;
-        layoutPosition.y = colliderPosition.y - 20;
+        layoutPosition.y = colliderPosition.y - 14.406f;
         layoutPosition.z = 0;
 
         GameObject aux = GameObject.Instantiate(_prefabLayout[RandomizeLayout()], layoutPosition, Quaternion.identity);
