@@ -9,6 +9,9 @@ TagManager:
   - Target
   - Dog
   - End
+  - Obstacle
+  - Enemy
+  - Clock
   layers:
   - Default
   - TransparentFX
@@ -21,8 +24,8 @@ TagManager:
   - Wall
   - LayoutCollider
   - Ghost
-  - 
-  - 
+  - BG
+  - EnemyLayer
   - 
   - 
   - 

@@ -13,6 +13,7 @@ public class Dog : MonoBehaviour
     public bool Got;
 
     [SerializeField] public float _velocity;
+    [SerializeField] private float _dogVelocity;
     [SerializeField] public PlayerStats _playerStats;
 
 
@@ -21,6 +22,8 @@ public class Dog : MonoBehaviour
         _closer = Vector2.zero;
 
         Got = false;
+
+        _velocity = _playerStats.PlayerVelocity * _dogVelocity;
     }
 
     // Update is called once per frame
@@ -29,7 +32,7 @@ public class Dog : MonoBehaviour
         if(!Got)
         {
             Follow();
-            _velocity += 0.05f * Time.deltaTime;
+            _velocity = _playerStats.PlayerVelocity * _dogVelocity;
         }
         else
         {

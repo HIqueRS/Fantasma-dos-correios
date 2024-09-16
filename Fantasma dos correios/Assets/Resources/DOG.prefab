@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2093798469503136299}
   - component: {fileID: 2093798469503136278}
   - component: {fileID: 2093798469503136279}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DOG
   m_TagString: Dog
   m_Icon: {fileID: 0}
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Got: 0
   _velocity: 2
+  _dogVelocity: 0
   _playerStats: {fileID: 11400000, guid: 0dc8866da6d50914d96c45692bbc8e19, type: 2}
 --- !u!61 &2093798469503136279
 BoxCollider2D:

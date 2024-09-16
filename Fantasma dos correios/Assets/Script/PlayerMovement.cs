@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position += -transform.up * Time.deltaTime * _velocity;
 
         _acceleration += 0.0125f * Time.deltaTime;
-        _topVelocity +=  0.05f * Time.deltaTime;
+        _topVelocity +=  0.03f * Time.deltaTime;
 
         _playerStats.PlayerVelocity = _topVelocity; 
     }
